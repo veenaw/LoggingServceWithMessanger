@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.android.LoggingServiceWithMessenger"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="13"
+        android:targetSdkVersion="19" />
+
+    <permission android:name="com.example.android.LoggingServiceWithMessenger.PERMISSION" >
+    </permission>
+
+    <application
+        android:allowBackup="false"
+        android:label="@string/app_name" >
+        <service
+            android:name=".LoggingService"
+            android:enabled="true"
+            android:process=":remote"
+            android:permission="com.example.android.LoggingServiceWithMessenger.PERMISSION" >
+            <intent-filter>
+                <action android:name="com.example.android.LoggingServiceWithMessenger.LoggingService" />
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>
